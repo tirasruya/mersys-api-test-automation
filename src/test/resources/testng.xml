@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="MERSYS API Test Suite" parallel="false">
+
+    <test name="API Tests">
+        <packages>
+            <package name="com.mersys.api.tests.auth"/>
+            <package name="com.mersys.api.tests.country"/>
+            <package name="com.mersys.api.tests.state"/>
+        </packages>
+    </test>
+
+</suite>
