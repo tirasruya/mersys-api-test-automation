@@ -6,6 +6,7 @@ import api.models.response.LoginResponse;
 import api.utils.ConfigReader;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -57,5 +58,10 @@ public class BaseTest {
                         .auth().oauth2(token);
 
         LOGGER.info("RequestSpecification initialized with token");
+    }
+
+    protected void logResponse(Response response) {
+        LOGGER.info("Status Code: {}", response.statusCode());
+        LOGGER.info("Response Body:\n{}", response.asPrettyString());
     }
 }
