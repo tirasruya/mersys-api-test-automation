@@ -8,11 +8,9 @@ import static io.restassured.RestAssured.given;
 
 public class CityEndpoints extends BaseTest {
 
-    // Şehir işlemleri için temel adresler
     public static final String CITIES = "/school-service/api/cities";
     public static final String CITY_BY_ID = "/school-service/api/cities/{id}";
 
-    // POST: Şehir Oluşturma
     public static Response createCity(CityRequest body) {
         return given()
                 .spec(request)
@@ -21,7 +19,6 @@ public class CityEndpoints extends BaseTest {
                 .post(CITIES);
     }
 
-    // PUT: Şehir Güncelleme
     public static Response updateCity(CityRequest body) {
         return given()
                 .spec(request)
@@ -30,7 +27,6 @@ public class CityEndpoints extends BaseTest {
                 .put(CITIES);
     }
 
-    // DELETE: Şehir Silme
     public static Response deleteCity(String cityId) {
         return given()
                 .spec(request)
