@@ -27,14 +27,14 @@ public class US103_ExamCRUDTest extends BaseTest {
         examBody.setGradeLevel(grade);
 
         ExamResponse response = given()
-                .spec(request) // BaseTest'ten gelen RequestSpecification
+                .spec(request)
                 .body(examBody)
                 .when()
                 .post(ExamEndpoints.CREATE_EXAM)
                 .then()
                 .statusCode(201) // Kriter: 201 Created
                 .body("name", equalTo(examName))
-                .extract().as(ExamResponse.class); // Yanıtı modele çevirme
+                .extract().as(ExamResponse.class);
 
         examId = response.getId();
         System.out.println("Created Exam ID: " + examId);
@@ -43,7 +43,7 @@ public class US103_ExamCRUDTest extends BaseTest {
     @Test(priority = 2, dependsOnMethods = "createExam")
     public void updateExam() {
         ExamRequest updateBody = new ExamRequest();
-        updateBody.setId(examId); // Kriter: Güncelleme için ID gövdede gitmeli
+        updateBody.setId(examId);
         updateBody.setName(examName + " Updated");
 
         ExamRequest.GradeLevel grade = new ExamRequest.GradeLevel();
