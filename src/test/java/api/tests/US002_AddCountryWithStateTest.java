@@ -7,6 +7,7 @@ import api.models.request.StateRequest;
 import api.models.response.CountryResponse;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import api.utils.TestContext;
 
 import java.util.List;
 import java.util.Random;
@@ -53,6 +54,9 @@ public class US002_AddCountryWithStateTest extends BaseTest {
         Assert.assertEquals(response.isHasState(), true);
         Assert.assertEquals(response.getName(), countryName);
         Assert.assertEquals(response.getCode(), countryCode);
+
+        TestContext.setCountryId(response.getId());
+        LOGGER.info("Country ID stored for further tests: {}", response.getId());
 
         LOGGER.info("Country created with ID: {}", response.getId());
         LOGGER.info("US002 - Add Country With State test finished");

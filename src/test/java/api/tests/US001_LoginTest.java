@@ -22,7 +22,6 @@ public class US001_LoginTest {
 
         LOGGER.info("US001 Login test started");
 
-        // Arrange
         LoginRequest loginRequest = new LoginRequest(
                 ConfigReader.get("username"),
                 ConfigReader.get("password")
@@ -30,7 +29,6 @@ public class US001_LoginTest {
 
         LOGGER.info("Login request prepared for user: {}", ConfigReader.get("username"));
 
-        // Act
         Response response =
                 RestAssured
                         .given()
@@ -43,7 +41,6 @@ public class US001_LoginTest {
         LOGGER.info("Login request sent to {}", AuthEndpoints.LOGIN);
         LOGGER.info("Response status code: {}", response.getStatusCode());
 
-        // Assert
         response.then().statusCode(200);
 
         LoginResponse loginResponse = response.as(LoginResponse.class);
