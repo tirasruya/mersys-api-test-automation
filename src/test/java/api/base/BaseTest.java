@@ -17,11 +17,12 @@ import static io.restassured.RestAssured.given;
 public class BaseTest {
 
     protected static RequestSpecification request;
+    protected static String token;
+
 
     protected static final Logger LOGGER =
             LogManager.getLogger(BaseTest.class);
 
-    private static String token;
 
     @BeforeSuite
     public void setup() {
