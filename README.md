@@ -29,5 +29,11 @@ The project covers:
 - Response validation
 - Authorization checks
 - Regression testing
-## 📂 Project Structure
 
+---
+
+## Contributors
+
+- **Ruya Tiras - @tirasruya**
+- **Aslihan Gulluoglu - @aslihanX**
+- **Taner Ozcelik - @tanerozc**
